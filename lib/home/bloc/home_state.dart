@@ -1,6 +1,5 @@
 part of 'home_bloc.dart';
 
-@immutable
 sealed class HomeState {}
 
 abstract class HomeActionState extends HomeState {}
@@ -15,18 +14,20 @@ class HomeLoadedSuccessState extends HomeState {
   HomeLoadedSuccessState({required this.product});
 }
 
-class FvouriteListstate extends HomeState {
-  List<ProductModel> favourite;
-
-  FvouriteListstate({required this.favourite});
-}
-
 class HomeErrorState extends HomeState {}
 
 class HomeNavigateToWishlistPageActionButton extends HomeActionState {}
 
 class HomeNavigateToCartPageActionButton extends HomeActionState {}
 
-class SnackbarOfCarts extends HomeActionState {}
+class SnackbarOfCartsAdd extends HomeActionState {}
 
-class SnackbarOfFavourites extends HomeActionState {}
+class SnackbarOfFavouritesAdd extends HomeActionState {}
+
+class SnackbarOfFavouriteRemove extends HomeActionState {}
+
+class SnackbarOfCartRemove extends HomeActionState {}
+
+class NavigateToHome extends HomeActionState {}
+
+class Updateiconstate extends HomeActionState {}

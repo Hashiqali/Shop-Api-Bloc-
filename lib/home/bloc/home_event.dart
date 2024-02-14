@@ -1,36 +1,27 @@
 part of 'home_bloc.dart';
 
-
-@immutable
-
 sealed class HomeEvent {}
-
 
 class InitialfetchEvent extends HomeEvent {}
 
-
-class HomeProductWishlistButtonClickedEvent extends HomeEvent {
-
+class AddFavButtonEvent extends HomeEvent {
   final ProductModel data;
 
-
-  HomeProductWishlistButtonClickedEvent({required this.data});
-
+  AddFavButtonEvent({required this.data});
 }
 
-
-class HomeProductCartButtonClickedEvent extends HomeEvent {
-
+class AddCartButtonEvent extends HomeEvent {
   final ProductModel data;
 
-
-  HomeProductCartButtonClickedEvent({required this.data});
-
+  AddCartButtonEvent({required this.data});
 }
 
+class NavigateToFav extends HomeEvent {}
 
-class HomeWishlistButtonNavigateButton extends HomeEvent {}
+class NavigateToCart extends HomeEvent {}
 
+class Buttonupdate extends HomeEvent {
+  final ProductModel data;
 
-class HomeCartButtonNavigateButton extends HomeEvent {}
-
+  Buttonupdate({required this.data});
+}
